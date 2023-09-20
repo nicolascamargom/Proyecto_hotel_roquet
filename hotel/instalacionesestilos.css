@@ -1,0 +1,98 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('francesco-ungaro-jqKS0ET-wGE-unsplash.jpg'); 
+    background-size: cover;
+    background-position: center;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    
+}
+
+header {
+    background-color:rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 10px 0;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+
+}
+
+.menu  {
+    width: 2000px;
+    height: 50px;
+    list-style: none;
+    padding: 0;
+    display: inline;
+    margin-right: 20px;
+}
+
+.menu ul li {
+    display: inline-block;
+    margin-right: 20px;
+    margin-top: 7px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.menu li  {
+    background-color: rgb(8, 0, 0);
+    width: 200px;
+    height: auto;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    transition: width 1s;
+    
+}
+/*jaider parra  estilos nuevos*/
+
+
+.menu li:hover {
+    transform: scale(1.1);
+    color: black;
+    font-weight: bold;
+    width: 250px;
+}
+
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); 
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+}
+
+/* Estilo para los títulos de las secciones con otra transición */
+h2 {
+    font-size: 24px;
+    color: #ff5733;
+    text-align: center;
+    margin-top: 20px;
+    transform: scale(1);
+    transition: color 0.3s ease, transform 0.3s ease; /* Agrega una transición suave al color y la escala de los títulos */
+}
+
+/* Estilo para los títulos de las secciones al pasar el cursor */
+h2:hover {
+    color: #ff9640; /* Cambia el color de los títulos al pasar el cursor */
+    transform: scale(1.1); /* Aplica un efecto de escala al pasar el cursor */
+}
+
+p {
+    line-height: 1.6;
+}
+footer{
+    background-color: white;
+
+}

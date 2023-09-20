@@ -1,0 +1,268 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('francesco-ungaro-jqKS0ET-wGE-unsplash.jpg'); 
+    background-size: cover;
+    background-position: center;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    
+}
+
+header {
+    background-color:rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    padding: 10px 0;
+    text-align: center;
+    font-family: 'Dancing Script', cursive;
+}
+/* Estilo para la imagen en el header */
+header img {
+    max-width: 8%; 
+    display: block; 
+    margin: 0 auto; 
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 50px;
+}
+nav ul {
+    list-style: none;
+    padding: 0;
+
+}
+.welcome{
+    color: #fff;
+}
+/* Estilo para el menú */
+.menu {
+    width: 100%; 
+    padding: 0;
+    text-align: center; 
+}
+/*jaider estilos para menu*/
+/* Estilo para los enlaces del menú */
+.menu a {
+    text-decoration: none;
+    color: #ff5733; 
+    font-weight: bold; 
+    transition: color 0.3s ease; 
+}
+
+/* Estilo para los enlaces del menú al pasar el cursor */
+.menu a:hover {
+    color: #ff9640; 
+}
+.menu li {
+    display: inline-block; 
+    margin-right: 20px; 
+}
+
+.menu li  {
+    background-color: rgb(8, 0, 0);
+    width: 200px;
+    height: auto;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    transition: width 1s;
+    
+}
+.menu li:last-child {
+    margin-right: 0; /* Elimina el margen derecho del último elemento de menú */
+}
+
+.menu li:hover {
+    transform: scale(1.1);
+    color: black;
+    font-weight: bold;
+    width: 250px;
+}
+
+/* Estilo para el contenido principal */
+main {
+    padding: 20px;
+
+}
+.p{
+    background-color: rgb(255, 255, 255);
+}
+/* Estilo para el encabezado principal (H1) */
+h1 {
+    font-size: 45px; 
+    color: #000000; 
+    text-align: center; 
+    margin-top: -50px;
+    transition: color 0.3s ease; /* Agrega una transición suave al color del texto del H1 */
+}
+
+/* Estilo para el encabezado principal (H1) al pasar el cursor */
+h1:hover {
+    color: #777777; /* Cambia el color del texto del H1 al pasar el cursor */
+}
+
+/* Estilo para los títulos de sección */
+h2 {
+    font-size: 24px;
+    color: #ff5733;
+    text-align: center;
+    margin-top: 20px;
+    transition: color 0.3s ease, transform 0.3s ease; 
+    
+}
+h2:hover {
+    color: #ff9640; 
+    transform: scale(1.1); 
+}
+
+/* Estilo para los párrafos en el contenido principal */
+main p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff;
+}
+
+footer{
+    background-color: white;
+
+}
+
+/* animación */
+.animacion-texto {
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    color: #fff;
+    animation: colorChange 10s infinite alternate; /* Animación de cambio de color */
+}
+
+/* Animación para cambiar el color de fondo */
+@keyframes colorChange {
+    0% {
+        background-color: #1DB954;
+    }
+    50% {
+        background-color: #bb1e1e;
+    }
+    100% {
+        background-color: #65129c;
+    }
+    100%{
+        background-color: rgba(98, 0, 255, 0.664);
+    }
+}
+/* Estilo para el contenedor*/
+
+
+/* Estilo para las imágenes dentro del contenedor */
+.imagenes-fondo img {
+    color: #fff;
+    animation: colorChange 10s infinite alternate; /* Animación de cambio de color */
+    background-size: cover; /* Ajustar el tamaño del fondo para que sea más pequeño */
+    background-repeat: no-repeat; /* Evitar que el fondo se repita */
+    background-position: center; /* Centrar el fondo */
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    background-color: rgba(0, 0, 0, 0.1); /* Color de fondo sutil */
+    padding: 10px; /* Espaciado alrededor de la imagen */
+    border-radius: 5px; /* Bordes redondeados */
+    
+}
+/*zoom a la imagen*/
+.imagenes-fondo{
+    height: 700px;
+    overflow: hidden;
+    border-radius: 16px;
+
+}
+
+/* Estilo para las imágenes dentro del contenedor */
+.imagenes-fondo img {
+    object-fit: cover;
+    transition: transform 0.8s;
+    height: 600px;
+}
+
+/* Efecto de escala al pasar el cursor sobre la imagen */
+.imagenes-fondo img:hover {
+    transform: scale(1.5);
+}
+
+.nuestraintalaciones{
+    color: #fff;
+}
+/* Estilo para el formulario con transiciones */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: background-color 0.3s ease; /* Agrega una transición suave al color de fondo del formulario */
+}
+
+/* Estilo para los campos de entrada en el formulario */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="password"],
+input[type="color"],
+input[type="tel"],
+input[type="email"],
+input[type="url"],
+input[type="month"],
+input[type="time"],
+input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease; /* Agrega una transición suave al color del borde de los campos de entrada */
+}
+/* Estilo para los campos de entrada al pasar el cursor */
+input[type="text"]:hover,
+input[type="number"]:hover,
+input[type="date"]:hover,
+input[type="password"]:hover,
+input[type="color"]:hover,
+input[type="tel"]:hover,
+input[type="email"]:hover,
+input[type="url"]:hover,
+input[type="month"]:hover,
+input[type="time"]:hover,
+input[type="submit"]:hover {
+    border-color: #ff5733; /* Cambia el color del borde al pasar el cursor sobre los campos de entrada */
+}
+
+/* Estilo para el botón de enviar en el formulario */
+input[type="submit"] {
+    background-color: #ff5733;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Agrega una transición suave al color de fondo del botón de enviar */
+}
+
+/* Estilo para el botón de enviar al pasar el cursor */
+input[type="submit"]:hover {
+    background-color: #ff9640; /* Cambia el color de fondo del botón de enviar al pasar el cursor */
+}
+
+#menu-button {
+    background-color: rgb(8, 0, 0);
+    border: none;
+    height: 50px;
+    width: 50px;
+    color: #ff9640;
+    text-decoration: none;
+    transition: width 1s;
+    border-radius: 100px;
+    font-weight: bold;
+    font-size: 20px;
+}
