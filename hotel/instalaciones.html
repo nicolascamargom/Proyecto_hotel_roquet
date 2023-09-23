@@ -6,32 +6,41 @@
     <link rel="stylesheet" type="text/css" href="proyectopag.css">
     <link rel="stylesheet" type="text/html" href="proyectopag.html">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="https://kit.fontawesome.com/9cb64367b1.js" crossorigin="anonymous"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:ital@0;1&family=Yanone+Kaffeesatz:wght@300;400&display=swap"
         rel="stylesheet">
 
 </head>
 
-<body>
 
+<body>
+  
     <header>
-        <a href="agg url"><img src="Logo Moda Femenina Minimalista Negro y Rosa.png" alt="">
-            <h1>Hotel Roquet</h1>
-        </a>
+        
+     
+        <a href="agg url"><img class="img-logo" src="Logo Moda Femenina Minimalista Negro y Rosa.png" alt=""></a>
+
+        <img src="./HotelRoquet.png" alt="hotel">
+
         <nav class="menu">
             <ul>
-                <li><a href="./proyectopag.html">Inicio</a></li>
-                <li><a href="./instalaciones.html">Instalaciones</a></li>
-                <li><a href="./nosotros.html">Nosotros</a></li>
-                <li><a href="#tema4">Ofertas</a></li>
-                <li><a href="#tema5">Reserva aquí</a></li>
-                <li><a href="#tema6">Más info</a></li>
+                
+                <li class="menu-item"><a href="./proyectopag.html"><i class="fa-solid fa-house"></i><span>Inicio</span></a></li>
+                          
+                <li class="menu-item"><a href="./instalaciones.html"><i class="fas fa-bed"></i><span>Instalaciones</span></a></li>
+                <li class="menu-item"><a href="./nosotros.html"><i class="fas fa-star"></i><span>Nosotros</span></a></li>
+
+                <li class="menu-item"><a href="#tema4"><i class="fa-solid fa-tag"></i><span>Ofertas</span></a></li>
+
+                <li class="menu-item"><a href="./reserveaqui.html"><i class="fa-solid fa-calendar-days" ></i><span>Reserva aquí</span></a></li>
+
+                <li class="menu-item"><a href="#tema6"><i class="fa-solid fa-exclamation"></i><span>Más info</span></a></li>
             </ul>
         </nav>
-        <button id="menu-button"> ☰</button> <!-- Este es el botón de menú -->
+        <button id="menu-button"> ☰ </button> <!-- Este es el botón de menú -->
     </header>
-
-
+    <div class="container">
     <main>
 
         <h2 id="tema2">Instalaciones</h2>
@@ -60,7 +69,7 @@
         <hr>
 
 
-        <div class="animacion-texto">
+        <div class="animacion-texto"> 
             <p>
                 Bienvenido a nuestro espacio de lujo y confort, diseñado especialmente para que tu estancia sea
                 inolvidable. Nuestra Suite Junior ofrece una serie de características excepcionales: <br>
@@ -108,7 +117,7 @@
         </li>
         </ul>
         <hr>
-        <div class="animacion-texto" </div>
+        <div class="animacion-texto"> 
             <p>
                 Te invitamos a descubrir nuestro refugio de lujo, "La Gran Suite", donde el confort y la elegancia se
                 fusionan para ofrecerte una experiencia excepcional. Esta suite de categoría superior se destaca por sus
@@ -286,18 +295,18 @@
 
     </main>
     <footer>
-        <!-- Agregar iconos de redes sociales con imágenes -->
-        <center>
-            <a href="URL_DE_FACEBOOK"><img src="faceboook.png" width=25px></a>
-            <a href="URL_DE_YOUTUBE"><img src="youtube_icon_136006.png" width=30px></a>
-            <a href="URL_DE_INSTAGRAM"><img
-                    src="instagram-logo-instagram-logo-transparent-instagram-icon-transparent-free-free-png.webp"
-                    width=30px></a>
-            <!-- Agrega más redes sociales según sea necesario -->
-            <p>¡Sígueme en mis redes sociales!</p>
-        </center>
 
+        <center>
+            <div class="social-icons">
+                <a href="URL_DE_FACEBOOK"><i class="fa-brands fa-facebook" style="color: #ffffff;" width=100px ></i></a>
+                <a href="URL_DE_YOUTUBE"><i class="fa-brands fa-youtube" style="color: #ffffff;"width=30px></i></a>
+                <a href="URL_DE_INSTAGRAM"><i class="fa-brands fa-instagram" style="color: #ffffff;"width=30px></i></a>
+
+            </div>
+            <p>¡Síguenos en nuestras redes sociales!</p>
+        </center>
     </footer>
+   
     <script>
         document.addEventListener("DOMContentLoaded", function () {
             const menuButton = document.getElementById("menu-button");
