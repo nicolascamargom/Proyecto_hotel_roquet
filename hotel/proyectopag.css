@@ -186,16 +186,16 @@ footer {
 /* Animación para cambiar el color de fondo */
 @keyframes colorChange {
     0% {
-        background-color: #1DB954;
+        background-color: #856139;
     }
     50% {
-        background-color: #bb1e1e;
+        background-color: #775b31;
     }
     100% {
-        background-color: #65129c;
+        background-color: #614a29;
     }
     100%{
-        background-color: rgba(98, 0, 255, 0.664);
+        background-color: #08030f5d;
     }
 }
 /* Estilo para el contenedor*/
