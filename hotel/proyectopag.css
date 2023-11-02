@@ -1,19 +1,17 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f5f5f5;
-    font-size: 16px; /* Tamaño de fuente base */
-    line-height: 1.6; /* Espaciado entre líneas para mejorar la legibilidad */
-    margin: 0;
-    padding: 0;
-    background-color: #ffffff;
-    background-size: cover;
-    background-position: center;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #000000;
 }
 
-a{
+a {
     text-decoration: none;
     color: rgb(255, 255, 255);
-    
+
 }
 
 
@@ -22,45 +20,60 @@ header {
     position: relative;
     width: 100%;
     height: 800px;
-    background-color: rgb(255, 255, 255);
-    color: #fff;
+    
+        background-color: #000000;
+        color: #333;
+        padding: 20px 0;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+        position: relative; /* Para posicionar el botón de reserva */
+
+    
     padding: 100px 0;
     text-align: center;
     font-family: 'Dancing Script', cursive;
-    overflow: hidden; /* Oculta las partes de las imágenes que se desborden */
+    overflow: hidden;
+    /* Oculta las partes de las imágenes que se desborden */
     background-repeat: no-repeat;
-    background-size: cover; 
-    animation: backgroundTransition 10s linear infinite; /* Cambia cada 10 segundos */
-    background-position-y: center; /* Centra verticalmente la imagen de fondo */
+    background-size: cover;
+    animation: backgroundTransition 10s linear infinite;
+    /* Cambia cada 10 segundos */
+    background-position-y: center;
+    /* Centra verticalmente la imagen de fondo */
 }
 
 @keyframes backgroundTransition {
-    0%, 100% {
+
+    0%,
+    100% {
         background-image: url(luxury\ hotel\ fr\ 1.png);
         background-repeat: no-repeat;
         background-size: 100%;
         background-position-y: -320px;
     }
+
     33.33% {
         background-image: url("luxury\ cocktail\ 0.png");
-        
+
     }
+
     66.66% {
         background-image: url("luxury\ hotel\ fr\ 0.png");
-        
+
     }
 }
 
 
 /* Estilo para la imagen en el header */
 .img-logo {
-    max-width: 8%; 
-    display: block; 
-    margin: 0 auto; 
+    max-width: 8%;
+    display: block;
+    margin: 0 auto;
     border-radius: 50%;
     object-fit: cover;
     margin-left: 50px;
+
 }
+
 nav ul {
     list-style: none;
     padding: 0;
@@ -69,47 +82,74 @@ nav ul {
     align-items: center;
     flex-direction: column;
 }
-.welcome{
+
+.welcome {
     color: #fff;
 }
-/* Estilo para el menú */
+
+/* Estilos para el menú */
 .menu {
-    width: 100%; 
+    width: 200px; /* Ancho del menú desplegable */
+    padding: 10px 0;
+    text-align: left; /* Alinear el texto a la izquierda */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%); /* Centrar horizontalmente */
+    top: 350px; /* Ajusta esta propiedad para controlar la posición vertical */
+  }
+  .menu ul {
+    list-style: none;
+    margin: 0;
     padding: 0;
-    text-align: center; 
-}
-
-/* Estilo para los enlaces del menú */
-.menu a {
+  }
+  
+  .menu a {
     text-decoration: none;
-    color: rgba(98, 0, 255, 0.664);
-    font-weight: bold; 
-    transition: color 0.3s ease; 
-}
-
-/* Estilo para los enlaces del menú al pasar el cursor */
-.menu a:hover {
-    color: #fafafa; 
-}
-.menu li {
-    display: inline-block;
-}
-
-.menu li  {
+    color: rgba(231, 216, 6, 0.89);
+    font-weight: bold;
+    display: block;
+    padding: 20px 30px; /* Añadir espaciado arriba y abajo, y a los lados */
+    transition: background-color 0.3s ease;
+  }
+  
+  .menu a i {
+    margin-right: 10px; /* Espacio a la derecha de la imagen (ícono) */
+  }
+  
+  .menu a:hover {
+    background-color: rgba(8, 0, 0, 0.10);
+    color: #fafafa;
+  }
+  
+  .menu li {
+    position: relative;
+  }
+  
+  .menu li:hover ul {
+    display: block; /* Mostrar submenú al pasar el cursor por encima del elemento principal */
+  }
+  
+  .menu ul ul {
+    display: none; /* Ocultar submenús por defecto */
+    position: absolute;
+    top: 0;
+    left: 100%; /* Posición a la derecha del elemento principal */
     background-color: rgba(8, 0, 0, 0.8);
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); 
-    width: 200px;
-    height: auto;
-    color: rgb(0, 0, 0);
-    text-decoration: none;
-    transition: width 1s;
-    margin-top: 25px;
-    padding: 10px 5px 10px 5px
-    
-}
+  }
+  
+  .menu ul ul li {
+    width: 100%; /* Ocupar todo el ancho del submenú */
+    padding: 10px;
+  }
+  
+  .menu-item {
+    margin: 0;
+    padding: 0;
+  }
+  
 .menu li:last-child {
-    margin-right: 0; /* Elimina el margen derecho del último elemento de menú */
+    margin-right: 0;
+    /* Elimina el margen derecho del último elemento de menú */
 }
 
 .menu li:hover {
@@ -119,56 +159,71 @@ nav ul {
     width: 250px;
     box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.9);
 }
-
-/* Estilo para el contenido principal */
-main {
-    padding: 20px;
-
+.menu-item {
+    margin: 0;
+    padding: 0;
 }
-.p{
+.menu-item a {
+    display: flex; 
+    
+    color:rgba(231, 216, 6, 0.89);
+    text-decoration: none;
+    font-size: 18px;
+}
+
+  
+main {
+    background-color: #000000;
+    padding: 20px;
+    box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+}
+
+
+.p {
     background-color: rgb(255, 255, 255);
 }
+
 /* Estilo para el encabezado principal (H1) */
-h1, h2, h3 {
-    font-size: 45px; 
-    color: #000000; 
-    text-align: center; 
+h1,
+h2,
+h3 {
+    font-size: 45px;
+    color: #000000;
+    text-align: center;
     margin-top: -50px;
-    transition: color 0.3s ease; /* Agrega una transición suave al color del texto del H1 */
+    transition: color 0.3s ease;
+    /* Agrega una transición suave al color del texto del H1 */
 }
 
 /* Estilo para el encabezado principal (H1) al pasar el cursor */
 h1:hover {
-    color: #777777; /* Cambia el color del texto del H1 al pasar el cursor */
+    color: #777777;
+    /* Cambia el color del texto del H1 al pasar el cursor */
 }
 
 /* Estilo para los títulos de sección */
 h2 {
     font-size: 24px;
-    color: #000000;
+    color: #ffffff;
     text-align: center;
     margin-top: 20px;
-    transition: color 0.3s ease, transform 0.3s ease; 
-    
+    transition: color 0.3s ease, transform 0.3s ease;
+
 }
+
 h2:hover {
-    color: #000000; 
-    transform: scale(1.1); 
+    color: #fffdfd;
+    transform: scale(1.1);
 }
 
 /* Estilo para los párrafos en el contenido principal */
 main p {
     font-size: 16px;
     line-height: 1.5;
-    color: #0a0a0a;
+    color: #ffffff;
 }
 
-footer {
-    background-color: #000;
-    color: #fff;
-    text-align: center;
-    padding: 20px 0;
-}
 
 .button:hover {
     background-color: #ff3a00;
@@ -180,44 +235,59 @@ footer {
     padding: 20px;
     margin: 20px 0;
     color: #fff;
-    animation: colorChange 10s infinite alternate; /* Animación de cambio de color */
+    animation: colorChange 10s infinite alternate;
+    /* Animación de cambio de color */
 }
 
 /* Animación para cambiar el color de fondo */
 @keyframes colorChange {
     0% {
-        background-color: #1DB954;
+        background-color: #2f2226
     }
+
     50% {
-        background-color: #bb1e1e;
+        background-color: #444245
     }
+
     100% {
-        background-color: #65129c;
+        background-color: #6d6467
     }
-    100%{
-        background-color: rgba(98, 0, 255, 0.664);
+
+    100% {
+        background-color: rgba(36, 32, 8, 0.616);
     }
 }
+
 /* Estilo para el contenedor*/
 
 
 /* Estilo para las imágenes dentro del contenedor */
 .imagenes-fondo img {
     color: #fff;
-    animation: colorChange 10s infinite alternate; /* Animación de cambio de color */
-    background-size: cover; /* Ajustar el tamaño del fondo para que sea más pequeño */
-    background-repeat: no-repeat; /* Evitar que el fondo se repita */
-    background-position: center; /* Centrar el fondo */
+    animation: colorChange 10s infinite alternate;
+    /* Animación de cambio de color */
+    background-size: cover;
+    /* Ajustar el tamaño del fondo para que sea más pequeño */
+    background-repeat: no-repeat;
+    /* Evitar que el fondo se repita */
+    background-position: center;
+    /* Centrar el fondo */
     max-width: 100%;
     height: auto;
     margin: 10px 0;
-    background-color: rgba(0, 0, 0, 0.1); /* Color de fondo sutil */
-    padding: 10px; /* Espaciado alrededor de la imagen */
-    border-radius: 5px; /* Bordes redondeados */
-    
+    background-color: rgba(0, 0, 0, 0.1);
+    /* Color de fondo sutil */
+    padding: 10px;
+    /* Espaciado alrededor de la imagen */
+    border-radius: 5px;
+    /* Bordes redondeados */
+    max-width: 100%;
+    height: auto;
+
 }
+
 /*zoom a la imagen*/
-.imagenes-fondo{
+.imagenes-fondo {
     height: 700px;
     overflow: hidden;
     border-radius: 16px;
@@ -236,9 +306,10 @@ footer {
     transform: scale(1.5);
 }
 
-.nuestraintalaciones{
+.nuestraintalaciones {
     color: #fff;
 }
+
 /* Estilo para el formulario con transiciones */
 form {
     max-width: 400px;
@@ -248,7 +319,8 @@ form {
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: background-color 0.3s ease; /* Agrega una transición suave al color de fondo del formulario */
+    transition: background-color 0.3s ease;
+    /* Agrega una transición suave al color de fondo del formulario */
 }
 
 /* Estilo para los campos de entrada en el formulario */
@@ -268,8 +340,10 @@ input[type="submit"] {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    transition: border-color 0.3s ease; /* Agrega una transición suave al color del borde de los campos de entrada */
+    transition: border-color 0.3s ease;
+    /* Agrega una transición suave al color del borde de los campos de entrada */
 }
+
 /* Estilo para los campos de entrada al pasar el cursor */
 input[type="text"]:hover,
 input[type="number"]:hover,
@@ -282,7 +356,8 @@ input[type="url"]:hover,
 input[type="month"]:hover,
 input[type="time"]:hover,
 input[type="submit"]:hover {
-    border-color: #ff5733; /* Cambia el color del borde al pasar el cursor sobre los campos de entrada */
+    border-color: #ff5733;
+    /* Cambia el color del borde al pasar el cursor sobre los campos de entrada */
 }
 
 /* Estilo para el botón de enviar en el formulario */
@@ -291,42 +366,49 @@ input[type="submit"] {
     color: #fff;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Agrega una transición suave al color de fondo del botón de enviar */
+    transition: background-color 0.3s ease;
+    /* Agrega una transición suave al color de fondo del botón de enviar */
 }
 
 /* Estilo para el botón de enviar al pasar el cursor */
 input[type="submit"]:hover {
-    background-color: #ff9640; /* Cambia el color de fondo del botón de enviar al pasar el cursor */
+    background-color: #ff9640;
+    /* Cambia el color de fondo del botón de enviar al pasar el cursor */
 }
+
 
 #menu-button {
     background-color: rgb(8, 0, 0);
     border: none;
     height: 53px;
     width: 40px;
-    color: rgba(98, 0, 255, 0.664);
+    color: rgba(231, 216, 6, 0.89);
     text-decoration: none;
     border-radius: 100px;
     font-weight: bold;
     font-size: 20px;
+    margin-right: 20px; /* Espacio entre el botón de menú y el botón de reserva */
 }
 
 
 .menu-item {
     display: flex;
-    align-items: center; /* Alinea verticalmente el contenido */
+    align-items: center;
+    /* Alinea verticalmente el contenido */
 }
 
 .menu-item a {
     display: flex;
-    align-items: center; /* Alinea verticalmente el contenido */
+    align-items: center;
+    /* Alinea verticalmente el contenido */
 }
 
 .menu-item i {
     color: white;
     width: 20%;
     font-size: 18px;
-    margin-left: 20px; /* Ajusta el margen entre el logo y el texto según sea necesario */
+    margin-left: 20px;
+    /* Ajusta el margen entre el logo y el texto según sea necesario */
 }
 
 .menu-item span {
@@ -337,17 +419,19 @@ input[type="submit"]:hover {
 .button {
     display: inline-block;
     padding: 15px 30px;
-    background-color: #ff5733;
+    background-color: #7c6f55;
     color: #fff;
     text-decoration: none;
     font-weight: bold;
     border-radius: 5px;
     transition: background-color 0.3s ease;
+
 }
 
 .button:hover {
     background-color: #ff3a00;
 }
+
 /* Estilos de secciones */
 section {
     padding: 40px 0;
@@ -363,6 +447,7 @@ section p {
     font-size: 18px;
     line-height: 1.5;
 }
+
 .social-icons {
     text-align: center;
     margin-top: 20px;
@@ -370,16 +455,22 @@ section p {
 
 .social-icons a {
     display: inline-block;
-    margin: 0 10px; /* Ajusta el espacio horizontal entre los íconos */
+    margin: 0 10px;
+    /* Ajusta el espacio horizontal entre los íconos */
     text-decoration: none;
-    color: #333; /* Color de los íconos */
-    font-size: 24px; /* Tamaño de fuente de los íconos */
-    transition: color 0.3s ease; /* Transición de color al pasar el mouse por encima */
+    color: #333;
+    /* Color de los íconos */
+    font-size: 24px;
+    /* Tamaño de fuente de los íconos */
+    transition: color 0.3s ease;
+    /* Transición de color al pasar el mouse por encima */
 }
 
 .social-icons a:hover {
-    color: #0077cc; /* Color de los íconos al pasar el mouse por encima */
+    color: #0077cc;
+    /* Color de los íconos al pasar el mouse por encima */
 }
+
 .reservation-form {
     background-color: #f5f5f5;
     padding: 20px;
@@ -421,7 +512,7 @@ input[type="time"] {
 
 input[type="submit"] {
     background-color: #0077cc;
-    color: #fff;
+    color: #000000;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -430,4 +521,182 @@ input[type="submit"] {
 
 input[type="submit"]:hover {
     background-color: #0055aa;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    max-width: 100px;
+    height: auto;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+.social-icons {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 24px;
+    margin-right: 20px;
+    text-decoration: none;
+}
+/* Estilos para el botón de reserva */
+.reserve-button {
+    position: absolute;
+    top: 20px; /* Ajusta la posición vertical según tu preferencia */
+    right: 20px; /* Posición en la esquina superior derecha */
+    background-color: #ff9900;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Estilos específicos para pantallas pequeñas */
+@media (max-width: 768px) {
+    body {
+        font-size: 16px; /* Tamaño de fuente más grande para una mejor legibilidad en pantallas pequeñas */
+    }
+
+    header {
+        position: relative;
+        background-color: #000000;
+        color: #333;
+        padding: 20px 0;
+        box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .header-content {
+        display: flex;
+        align-items: center;
+    }
+    
+    #menu-button {
+        background-color: rgb(8, 0, 0);
+        border: none;
+        height: 53px;
+        width: 40px;
+        color: rgba(231, 216, 6, 0.89);
+        text-decoration: none;
+        border-radius: 100px;
+        font-weight: bold;
+        font-size: 20px;
+        margin-right: 20px;
+    }
+    
+    .menu {
+        width: 200px;
+        padding: 10px 0;
+        text-align: left;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .menu ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .menu a {
+        text-decoration: none;
+        color: rgba(231, 216, 6, 0.89);
+        font-weight: bold;
+        display: block;
+        padding: 20px 30px;
+        transition: background-color 0.3s ease;
+    }    
+
+    .img-logo {
+        max-width: 20%; /* Ajusta el tamaño del logo en pantallas pequeñas */
+    }
+
+    .menu {
+        top: 100px; /* Ajusta la posición vertical del menú desplegable */
+    }
+
+    .menu a {
+        padding: 10px 20px; /* Reduce el espaciado en los elementos del menú */
+    }
+
+    .menu-item i {
+        margin-left: 10px; /* Reduce el margen entre el ícono y el texto en el menú */
+    }
+
+    .menu-item span {
+        width: 100%; /* Asegura que el texto del menú ocupe todo el ancho en pantallas pequeñas */
+    }
+
+    /* Otros estilos específicos para pantallas pequeñas */
+    main {
+        padding: 10px; /* Reduce el espaciado en el contenido principal */
+    }
+
+    h1, h2, h3 {
+        font-size: 28px; /* Tamaño de fuente más grande para los encabezados en pantallas pequeñas */
+    }
+
+    .social-icons {
+        margin-top: 10px; /* Reduce el margen superior de los íconos sociales */
+    }
+
+    .social-icons a {
+        font-size: 20px; /* Tamaño de fuente más grande para los íconos sociales */
+    }
+
+    .reserve-button {
+        top: 10px; /* Ajusta la posición vertical del botón de reserva en pantallas pequeñas */
+        right: 10px; /* Ajusta la posición horizontal del botón de reserva en pantallas pequeñas */
+        padding: 5px 10px; /* Reduce el tamaño del botón de reserva en pantallas pequeñas */
+    }
+    #menu-button {
+        margin: 20px;
+    }
+
+    .menu {
+        display: none;
+        width: 100%;
+    }
+
+    .menu a {
+        padding: 10px 20px;
+    }
+
+    .menu a i {
+        margin-right: 10px;
+    }
+
+    .menu li {
+        position: relative;
+        margin: 10px 0;
+    }
+
+    .menu li:hover ul {
+        display: block;
+    }
+    .menu-icon {
+        display: block; /* Muestra el botón de hamburguesa en pantallas pequeñas */
+      }
+      .menu ul {
+        display: none; /* Oculta el menú principal en pantallas pequeñas */
+        flex-direction: column; /* Apila los elementos verticalmente */
+      }
+      .menu.active ul {
+        display: flex; /* Muestra el menú principal al hacer clic en el botón de hamburguesa */
+      }
 }

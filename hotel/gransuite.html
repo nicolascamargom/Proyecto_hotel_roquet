@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Hotel Roquet</title>
+        <link rel="stylesheet" type="text/css" href="proyectopag.css">
+        <link rel="stylesheet" type="text/html" href="proyectopag.html">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:ital@0;1&family=Yanone+Kaffeesatz:wght@300;400&display=swap"
+            rel="stylesheet">
+        <script src="https://kit.fontawesome.com/9cb64367b1.js" crossorigin="anonymous"></script>
+    
+    </head>
+    
+    <body>
+    
+        <header>
+            <a href="./proyectopag.html"><img class="img-logo logo" src="Logo HR.png" alt=""></a>
+            <img src="./HotelRoquet.png" alt="hotel">
+            <div class="container">
+                
+                <button id="menu-button" class="menu-icon"><i class="fas fa-bars"></i></button>
+                <div class="menu">
+                    <ul>
+                      <li class="menu-item">
+                        <a href="./proyectopag.html"><i class="fa-solid fa-house"></i><span>Inicio</span></a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="./reserveaqui.html"><i class="fa-solid fa-calendar-days"></i><span>Reserva aquí</span></a>
+                        <ul>
+                            <li><a href="./suitejunior.html">Suite junior</a></li>
+                            <li><a href="./suitefamily.html">Suite family</a></li>
+                            <li><a href="./suitesuperior.html">Suite superior</a></li>
+                            <li><a href="./gransuite.html">Gran suite</a></li>
+                          </ul>
+                      </li>
+                      <li class="menu-item">
+                        <a href="./instalaciones.html"><i class="fas fa-bed"></i><span>Instalaciones</span></a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="#tema6"><i class="fa-solid fa-exclamation"></i><span>Más info</span></a>
+                        <ul>
+                          <li><a href="#">Submenú 1</a></li>
+                          <li><a href="#">Submenú 2</a></li>
+                        </ul>
+                      </li>
+                      <li class="menu-item">
+                        <a href="./nosotros.html"><i class="fas fa-star"></i><span>Nosotros</span></a>
+                      </li>
+                      <li class="menu-item">
+                        <a href="./ofertas.html"><i class="fa-solid fa-tag"></i><span>Planes</span></a>
+                      </li>
+                     
+                    </ul>
+                  </div>
+            <button class="reserve-button" onclick="window.location.href = './reserveaqui.html';">Reservar</button>
+        </header>
+        <main>
+            <div class="reservation-form">
+                <h2>Reserva Gran Suite</h2>
+                <form action="programa.php" method="get">
+                    <div class="form-group">
+                        <label for="usuario">Nombre:</label>
+                        <input type="text" id="nombre" name="nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="usuario">Identificación:</label>
+                        <input type="number" id="identificacion" name="identificacion" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="personas">Número de personas:</label>
+                        <input type="number" id="personas" name="personas" min="1" max="10" step="1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fechas">Fecha inicio:</label>
+                        <input type="date" id="fecha-inicio" name="fecha-inicio" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fechas">Fecha final:</label>
+                        <input type="date" id="fecha-final" name="fecha-final" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="metodo-pago">Método de pago:</label>
+                        <select id="metodo-pago" name="metodo-pago" required>
+                            <option value="efectivo">Efectivo</option>
+                            <option value="tarjeta de credito">Tarjeta de Crédito</option>
+                            <option value="paypal">Paypal</option>
+                            <option value="transferencia bancaria">Transferencia Bancaria</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Siguiente">
+                    </div>
+                </form>
+            </div>
+        </main>
+        
+
+   <footer>
+
+    <center>
+        <div class="social-icons">
+            <a href="URL_DE_FACEBOOK"><i class="fa-brands fa-facebook" style="color: #ffffff;" width=100px ></i></a>
+            <a href="URL_DE_YOUTUBE"><i class="fa-brands fa-youtube" style="color: #ffffff;"width=30px></i></a>
+            <a href="URL_DE_INSTAGRAM"><i class="fa-brands fa-instagram" style="color: #ffffff;"width=30px></i></a>
+
+        </div>
+        <p>¡Síguenos en nuestras redes sociales!</p>
+    </center>
+</footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuButton = document.getElementById("menu-button");
+            const menu = document.querySelector(".menu");
+
+            menu.style.display = "none";
+
+            menuButton.addEventListener("click", function () {
+
+                if (menu.style.display === "block") {
+                    menu.style.display = "none";
+                } else {
+                    menu.style.display = "block";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
