@@ -54,78 +54,320 @@
         <button class="reserve-button" onclick="window.location.href = './reserveaqui.html';">Reservar</button>
     </header>
     <main>
-        <div class="reservation-form">
-            <h2>Reserva tu estancia</h2>
-            <form action="conexion.php" method="get">
+        <!-- Formulario basado en la imagen proporcionada -->
+        <section>
+            <h2>Insertar Datos</h2>
+            <form action="reserva.php" method="POST">
+            
                 <div class="form-group">
-                    <label for="personas">identificacion:</label>
-                    <input type="number" id="identificacion" name="identificacion" >
+                    
+                    <label for="identificacion">Identificación:</label>
+                    <input type="text" id="identificacion" name="identificacion" required>
                 </div>
                 <div class="form-group">
                     <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre" required>
+                    <input type="text" id="nombre" name="nombre" required>
                 </div>
                 <div class="form-group">
-                    <label for="tipo-suite">Tipo de suite:</label>
-                    <select id="tipo-suite" name="tipo-suite">
-                        <option value="Suite Junior">Suite Junior</option>
-                        <option value="Gran suite">Gran suite</option>
-                        <option value="Suite Family">Suite Family</option>
-                        <option value="Suite Superior">Suite Superior</option>
+                    <label for="tipo_habitacion">Tipo de Suite:</label>
+                    <select id="tipo_habitacion" name="tipo_habitacion" required>
+                        <option value="suitfamily">Suite Family</option>
+                        <option value="suitjunior">Suite Junior</option>
+                        <option value="suitsuperior">Suite Superior</option>
+                        <option value="gransuite">Gran Suite</option>
                     </select>
+                <div class="form-group">
+                    <label for="num_personas">Número de Personas:</label>
+                    <input type="number" id="num_personas" name="num_personas" min="1" max="10" step="1" required>
                 </div>
                 <div class="form-group">
-                    <label for="personas">Numero de personas:</label>
-                    <input type="number" id="personas" name="personas" min="1" max="10" step="1">
+                    <label for="fecha_inicio">Fecha de Inicio:</label>
+                    <input type="date" id="fecha_inicio" name="fecha_inicio" required>
                 </div>
                 <div class="form-group">
-                    <label for="fechas">Fechas:</label>
-                    <input type="date" id="fechas" name="fechas">
+                    <label for="fecha_fin">Fecha Final:</label>
+                    <input type="date" id="fecha_fin" name="fecha_fin" required>
                 </div>
                 <div class="form-group">
-                    <label for="metodo-pago">Método de Pago:</label>
-                    <select id="metodo-pago" name="metodo-pago">
-                        <option value="Efectivo">Efectivo</option>
-                        <option value="tarjeta-credito">Tarjeta de Crédito</option>
-                        <option value="paypal">PayPal</option>
-                        <option value="transferencia-bancaria">Transferencia Bancaria</option>
-                    </select>
+                    <label for="num_reserva">Número de Reserva:</label>
+                    <input type="text" id="num_reserva" name="num_reserva" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="estado">Estado de la Reserva:</label>
+                    <input type="text" id="estado" name="estado" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="num_habitacion">Número de Habitación:</label>
+                    <input type="text" id="num_habitacion" name="num_habitacion" readonly>
+                </div>
+               
+                </div>
+                <div class="form-group">
+                    <label for="precio_total">Total en Pesos Colombianos:</label>
+                    <input type="text" id="precio_total" name="precio_total" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="dias_reserva">Días Reservados:</label>
+                    <input type="text" id="dias_reserva" name="dias_reserva" readonly>
                 </div>
                 <div class="form-group">
                     <input type="submit" value="Reservar">
+                    <input type="button" value="Calcular" onclick="calcularPrecioTotal()">
                 </div>
             </form>
-        </div>
+            
+        </section>
+
+        <section>
+            <h2>Eliminar Datos</h2>
+            <form id="form-eliminar" action="reserva.php" method="POST">
+                <label for="identificacion-eliminar">Identificación a Eliminar:</label>
+                <input type="text" id="identificacion-eliminar" name="identificacion-eliminar">
+                <button type="button" onclick="eliminarDatos()">Eliminar</button>
+            </form>
+        </section>
+
+        <section>
+            <h2>Actualizar Datos</h2>
+            <form action="reserva.php" method="POST">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            
+                <label for="identificacion">Identificación:</label>
+                <input type="text" id="identificacion" name="identificacion" required>
+            
+                <label for="fecha_inicio">Fecha de Inicio:</label>
+                <input type="date" id="fecha_inicio" name="fecha_inicio" required>
+            
+                <label for="fecha_fin">Fecha Final:</label>
+                <input type="date" id="fecha_fin" name="fecha_fin" required>
+            
+                <label for="tipo_habitacion">Tipo de Suite:</label>
+                <select id="tipo_habitacion" name="tipo_habitacion" required onchange="updateMaxPersonas()">
+                    <option value="suitfamily">Suite Family</option>
+                    <option value="suitjunior">Suite Junior</option>
+                    <option value="suitsuperior">Suite Superior</option>
+                    <option value="gransuite">Gran Suite</option>
+                </select>
+            
+                <label for="num_personas">Número de personas:</label>
+                <input type="number" id="num_personas" name="nume_personas" required>
+            
+                <label for="estado">Estado de la reserva:</label>
+                <input type="text" id="estado" name="estado" readonly>
+            
+                <label for="num_habitacion">Número de habitación:</label>
+                <input type="text" id="num_habitacion" name="num_habitacion" readonly>
+            
+                <label for="num_reserva">Número de reserva:</label>
+                <input type="text" id="num_reserva" name="num_reserva" readonly>
+            
+                <label for="precio_total">Precio total:</label>
+                <input type="text" id="precio_total" name="precio_total" readonly>
+                <button type="button" id="boton-actualizar" onclick="actualizarDatos()">Actualizar</button>
+                
+            </form>
+           
+        </section>
+
+        <section>
+            <h2>Consultar Datos</h2>
+            <form action="reserva.php" method="POST">
+                <!-- Aquí puedes agregar los campos para la consulta basándote en los campos anteriores -->
+                <!-- Por ejemplo: -->
+                <label for="identificacion-consultar">Identificación:</label>
+                <input type="text" id="identificacion-consultar">
+
+                <button type="submit">Consultar</button>
+            </form>
+        
     </main>
+        <footer>
+            <center>
+                <div class="social-icons">
+                    <a href="URL_DE_FACEBOOK"><i class="fa-brands fa-facebook" style="color: #ffffff;" width=100px></i></a>
+                    <a href="URL_DE_YOUTUBE"><i class="fa-brands fa-youtube" style="color: #ffffff;" width=30px></i></a>
+                    <a href="URL_DE_INSTAGRAM"><i class="fa-brands fa-instagram" style="color: #ffffff;" width=30px></i></a>
+                </div>
+                <p>¡Síguenos en nuestras redes sociales!</p>
+            </center>
+        </footer>
+    
+        <script>
+document.addEventListener("DOMContentLoaded", function() {
+    // Genera un número de reserva único al cargar la página - solo números
+    document.getElementById("num_reserva").value = Math.floor(Math.random() * 1000000000);
 
-   <footer>
+    // Agrega eventos para calcular la reserva y precio total
+    document.getElementById("fecha_inicio").addEventListener("change", calcularDiasPrecio);
+    document.getElementById("fecha_fin").addEventListener("change", calcularDiasPrecio);
+    document.getElementById("tipo_habitacion").addEventListener("change", calcularDiasPrecio);
+    document.getElementById("num_personas").addEventListener("change", calcularDiasPrecio);
+});
 
-    <center>
-        <div class="social-icons">
-            <a href="URL_DE_FACEBOOK"><i class="fa-brands fa-facebook" style="color: #ffffff;" width=100px ></i></a>
-            <a href="URL_DE_YOUTUBE"><i class="fa-brands fa-youtube" style="color: #ffffff;"width=30px></i></a>
-            <a href="URL_DE_INSTAGRAM"><i class="fa-brands fa-instagram" style="color: #ffffff;"width=30px></i></a>
+function calcularDiasPrecio() {
+    var fechaInicio = new Date(document.getElementById("fecha_inicio").value);
+    var fechaFin = new Date(document.getElementById("fecha_fin").value);
+    var tipoHabitacion = document.getElementById("tipo_habitacion").value;
 
-        </div>
-        <p>¡Síguenos en nuestras redes sociales!</p>
-    </center>
-</footer>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const menuButton = document.getElementById("menu-button");
-            const menu = document.querySelector(".menu");
+    if (fechaInicio > fechaFin) {
+        alert("La fecha de inicio no puede ser posterior a la fecha final.");
+        return;
+    }
 
-            menu.style.display = "none";
+    var diferenciaTiempo = fechaFin.getTime() - fechaInicio.getTime();
+    var diferenciaDias = Math.ceil(diferenciaTiempo / (1000 * 3600 * 24));
+    document.getElementById("dias_reserva").value = diferenciaDias;
 
-            menuButton.addEventListener("click", function () {
+    // Precios por día según la suite
+    var precios = {
+        "suitfamily": 400000,
+        "suitjunior": 200000,
+        "suitsuperior": 700000,
+        "gransuite": 1200000
+    };
 
-                if (menu.style.display === "block") {
-                    menu.style.display = "none";
-                } else {
-                    menu.style.display = "block";
-                }
-            });
-        });
-    </script>
+    // Límite de personas por suite
+    var limitePersonas = {
+        "suitfamily": 4,
+        "suitjunior": 2,
+        "suitsuperior": 6,
+        "gransuite": 12
+    };
+
+    var numPersonas = parseInt(document.getElementById("num_personas").value, 10);
+    if (numPersonas > limitePersonas[tipoHabitacion]) {
+        alert(`La suite seleccionada tiene un límite de ${limitePersonas[tipoHabitacion]} personas.`);
+        return;
+    }
+
+    var precioPorDia = precios[tipoHabitacion];
+    var precioTotal = diferenciaDias * precioPorDia;
+    document.getElementById("precio_total").value = precioTotal.toLocaleString('es-CO', {
+        style: 'currency',
+        currency: 'COP'
+    });
+    var disponible = esHabitacionDisponible(tipoHabitacion, fechaInicio, fechaFin); // Asegúrate de que esta función exista y devuelva true o false
+    var numeroHabitacion = disponible ? obtenerNumeroHabitacion(tipoHabitacion) : 'No disponible'; // Asegúrate de que esta función exista y devuelva un número
+
+    // Mostrar los datos en los campos de entrada
+    document.getElementById("estado").value = disponible ? "Disponible" : "No Disponible";
+    document.getElementById("num_habitacion").value = numeroHabitacion;
+
+ 
+}
+function esHabitacionDisponible(tipoHabitacion, fechaInicio, fechaFin) {
+    // En un entorno real, aquí realizarías una llamada a tu servidor o base de datos
+    // Por ahora, vamos a simular esto con una lógica simple
+
+    // Suponemos que la disponibilidad es aleatoria
+    return Math.random() > 0.5; // 50% de probabilidad, solo para demostración
+}
+
+function obtenerNumeroHabitacion(tipoHabitacion) {
+    // Supongamos que cada tipo de habitación tiene un rango diferente
+    var numeroBase;
+    var rango = 50; // Rango de números para cada tipo de habitación
+
+    switch(tipoHabitacion) {
+        case "suitfamily":
+            numeroBase = 100; // Las habitaciones familiares podrían empezar en el 100
+            break;
+        case "suitjunior":
+            numeroBase = 200; // Las junior en el 200
+            break;
+        case "suitsuperior":
+            numeroBase = 300; // Las superiores en el 300
+            break;
+        case "gransuite":
+            numeroBase = 400; // Las grandes suites en el 400
+            break;
+        default:
+            numeroBase = 500; // Un valor por defecto para cualquier otro tipo
+    }
+
+    // Genera un número aleatorio dentro del rango para ese tipo de habitación
+    return numeroBase + Math.floor(Math.random() * rango);
+}
+
+
+        
+            function eliminarDatos() {
+    var identificacionEliminar = document.getElementById("identificacion-eliminar").value;
+
+    // Aquí puedes añadir lógica para validar o confirmar la eliminación
+
+    if (confirm("¿Estás seguro de que quieres eliminar la reserva con identificación " + identificacionEliminar + "?")) {
+        // Aquí puedes agregar la lógica para enviar estos datos a tu servidor
+        // Por ejemplo, mediante una petición AJAX o Fetch API
+        console.log("Eliminando reserva con identificación:", identificacionEliminar);
+
+        // Ejemplo usando Fetch API
+        fetch('reserva.php', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'action=eliminar&identificacionEliminar=' + encodeURIComponent(identificacionEliminar)
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data);
+            // Aquí puedes agregar lógica adicional basada en la respuesta
+        })
+        .catch(error => console.error('Error:', error));
+    }
+}
+
+        
+            function actualizarDatos() {
+    var identificacion = document.getElementById("identificacion").value;
+    var nombre = document.getElementById("nombre").value;
+    var tipoHabitacion = document.getElementById("tipo_habitacion").value;
+    var numPersonas = document.getElementById("num_personas").value;
+    var fechaInicio = document.getElementById("fecha_inicio").value;
+    var fechaFin = document.getElementById("fecha_fin").value;
+
+    // Aquí puedes añadir más campos según tu formulario
+
+    console.log("Actualizar datos de:", identificacion, nombre, tipoHabitacion, numPersonas, fechaInicio, fechaFin);
+    
+    // Aquí puedes agregar la lógica para enviar estos datos a tu servidor
+    // Por ejemplo, mediante una petición AJAX o Fetch API
+}
+        
+function consultarDatos() {
+    var identificacionConsulta = document.getElementById("identificacion-consultar").value;
+
+    // Verifica si el campo está vacío
+    if (!identificacionConsulta) {
+        alert("Por favor, ingresa una identificación para consultar.");
+        return;
+    }
+
+    // Preparar los datos para enviar
+    let formData = new FormData();
+    formData.append('identificacion-consultar', identificacionConsulta);
+    formData.append('accion', 'consultar');  // Asegúrate de manejar esta acción en tu servidor
+
+    // Utiliza Fetch API para realizar la solicitud
+    fetch('reserva.php', {
+        method: 'POST',
+        
+       
+body: formData
+    })
+    .then(response => response.json())  // Asumiendo que el servidor devuelve una respuesta en formato JSON
+    .then(data => {
+        console.log("Datos recibidos:", data);
+        // Aquí puedes actualizar la interfaz de usuario con los datos recibidos
+    })
+    .catch(error => {
+        console.error('Error en la consulta:', error);
+    });
+}
+        </script>
+        </section>
+        
 </body>
 </html>
