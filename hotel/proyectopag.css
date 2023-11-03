@@ -700,3 +700,8 @@ footer {
         display: flex; /* Muestra el menú principal al hacer clic en el botón de hamburguesa */
       }
 }
+.titulo-form {
+    color: #000000;
+    font-weight: bold;
+    font-stretch: expanded; /* Opcional: Ajusta según tu preferencia */
+}
