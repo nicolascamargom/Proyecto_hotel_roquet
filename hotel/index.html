@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Roquet</title>
+    <link rel="stylesheet" type="text/css" href="proyectopag.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Playfair+Display:ital@0;1&family=Yanone+Kaffeesatz:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha384-....">
+
+</head>
+<body>
+    <header>
+        <a href="./index.html"><img class="img-logo logo" src="Logo HR.png" alt=""></a>
+        <img src="./HotelRoquet.png" alt="hotel">
+        <div class="container">
+            
+            <button id="menu-button" class="menu-icon"><i class="fas fa-bars"></i></button>
+            <div class="menu">
+                <ul>
+                  <li class="menu-item">
+                    <a href="./index.html"><i class="fa-solid fa-house"></i><span>Inicio</span></a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="./reserveaqui.html"><i class="fa-solid fa-calendar-days"></i><span>Reserva aquí</span></a>
+                   
+                  </li>
+                  <li class="menu-item">
+                    <a href="./instalaciones.html"><i class="fas fa-bed"></i><span>Instalaciones</span></a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="masinfo.html"><i class="fa-solid fa-exclamation"></i><span>Más info</span></a>
+                  
+                  </li>
+                  <li class="menu-item">
+                    <a href="./nosotros.html"><i class="fas fa-star"></i><span>Nosotros</span></a>
+                  </li>
+                  <li class="menu-item">
+                    <a href="./ofertas.html"><i class="fa-solid fa-tag"></i><span>Planes</span></a>
+                  </li>
+                 
+                </ul>
+              </div>
+        <button class="reserve-button" onclick="window.location.href = './reserveaqui.html';">Reservar</button>
+    </header>
+
+    <main>
+        <section id="tema1">
+            <h2>Inicio</h2>
+            <div class="welcome">
+                <p>¡Bienvenido a una experiencia única en el Hotel Roquet!</p>
+                <p>Sumérgete en el lujo y la comodidad mientras te invitamos a descubrir un oasis de elegancia en el corazón de la ciudad. Con vistas espectaculares, servicios de clase mundial y una atención excepcional, tu escape perfecto aguarda en el Hotel Roquet.</p>
+                <div class="imagenes-fondo">
+                   <center><img src="disena-un-hotel-8k-delujo-upscaled.png" alt=""></center> 
+                </div>
+                <p>Nuestras habitaciones y suites están diseñadas para tu máximo confort, con comodidades de primera clase y decoración contemporánea. Relájate en nuestro restaurante de clase mundial o disfruta de una bebida en nuestro acogedor bar.</p>
+                <p>En el Hotel Roquet, nos enorgullece ofrecer un servicio de alta calidad para que tu estadía sea inolvidable. ¡Esperamos darte la bienvenida pronto!</p>
+            </div>
+        </section>
+
+        <section id="tema2">
+            <h2>Acerca de nosotros</h2>
+            <div class="about">
+                <p>Brindamos una moderna infraestructura con excelente calidad en el servicio a través de la tecnología, ética, actividad, confiabilidad e higiene, seguridad y compromiso ambiental para empleados, clientes, proveedores y la comunidad en general.</p>
+                <div class="imagenes-fondo">
+                    <center>  <img src="disena-un-hotel-8k-delujo-del-toda-su-infra-estruc-upscaled.png" alt=""</center>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <center>
+            <div class="social-icons">
+                <a href="URL_DE_FACEBOOK"><i class="fa-brands fa-facebook" style="color: #ffffff;" width=100px></i></a>
+                <a href="URL_DE_YOUTUBE"><i class="fa-brands fa-youtube" style="color: #ffffff;" width=30px></i></a>
+                <a href="URL_DE_INSTAGRAM"><i class="fa-brands fa-instagram" style="color: #ffffff;" width=30px></i></a>
+            </div>
+            <p>¡Síguenos en nuestras redes sociales!</p>
+        </center>
+    </footer>
+   
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuButton = document.getElementById("menu-button");
+            const menu = document.querySelector(".menu");
+
+            menu.style.display = "none";
+
+            menuButton.addEventListener("click", function () {
+                if (menu.style.display === "block") {
+                    menu.style.display = "none";
+                } else {
+                    menu.style.display = "block";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
